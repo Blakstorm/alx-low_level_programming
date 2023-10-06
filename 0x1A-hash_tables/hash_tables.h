@@ -1,19 +1,17 @@
-#ifndef _HASH_TABLES_H_
-#define _HASH_TABLES_H_
+#ifndef HASH_TABLES_H
+#define HASH_TABLES_H
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 /**
  * struct hash_node_s - Node of a hash table
- *
  * @key: The key, string
  * The key is unique in the HashTable
  * @value: The value corresponding to a key
  * @next: A pointer to the next node of the List
  */
-
 typedef struct hash_node_s
 {
 	char *key;
@@ -23,13 +21,11 @@ typedef struct hash_node_s
 
 /**
  * struct hash_table_s - Hash table data structure
- *
  * @size: The size of the array
  * @array: An array of size @size
  * Each cell of this array is a pointer to the first node of a linked list,
  * because we want our HashTable to use a Chaining collision handling
  */
-
 typedef struct hash_table_s
 {
 	unsigned long int size;
@@ -46,7 +42,6 @@ void hash_table_delete(hash_table_t *ht);
 
 /**
  * struct shash_node_s - Node of a sorted hash table
- *
  * @key: The key, string
  * The key is unique in the HashTable
  * @value: The value corresponding to a key
@@ -54,7 +49,6 @@ void hash_table_delete(hash_table_t *ht);
  * @sprev: A pointer to the previous element of the sorted linked list
  * @snext: A pointer to the next element of the sorted linked list
  */
-
 typedef struct shash_node_s
 {
 	char *key;
@@ -66,7 +60,6 @@ typedef struct shash_node_s
 
 /**
  * struct shash_table_s - Sorted hash table data structure
- *
  * @size: The size of the array
  * @array: An array of size @size
  * Each cell of this array is a pointer to the first node of a linked list,
@@ -74,7 +67,6 @@ typedef struct shash_node_s
  * @shead: A pointer to the first element of the sorted linked list
  * @stail: A pointer to the last element of the sorted linked list
  */
-
 typedef struct shash_table_s
 {
 	unsigned long int size;
@@ -90,4 +82,4 @@ void shash_table_print(const shash_table_t *ht);
 void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 
-#endif /* _HASH_TABLES_H_ */i
+#endif /* HASH_TABLES_H */
